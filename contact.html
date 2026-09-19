@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Bright Minds Academy — DHA Phase 6 Karachi. Admissions, demo class booking, map and directions." />
+  <meta name="robots" content="index,follow" />
+  <title>Admissions &amp; Contact — Bright Minds Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="ribbon">Sample website for demo purposes · Built by <a href="https://brandrise.online" target="_blank" rel="noopener">@brandrise.online</a></div>
+
+  <nav>
+    <div class="wrap nav-in">
+      <a href="index.html" class="logo"><span class="logo-dot">BM</span>Bright Minds</a>
+      <button class="burger" aria-label="Menu">☰</button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Admissions</a>
+        <a href="contact.html" class="btn">Book a Free Demo →</a>
+      </div>
+    </div>
+  </nav>
+
+  <section style="padding-top:70px">
+    <div class="wrap">
+      <span class="sec-label">Admissions &amp; Contact</span>
+      <h2 class="sec-title">Find us on the map.</h2>
+      <p class="sec-sub">DHA Phase 6, right off the main boulevard — free parking for parents, easy access for students coming by bus.</p>
+
+      <div class="split" style="margin-top:36px">
+        <div>
+          <iframe class="mapframe" loading="lazy"
+            src="https://www.google.com/maps?q=DHA+Phase+6+Karachi&output=embed"
+            referrerpolicy="no-referrer-when-downgrade" title="Bright Minds Academy on Google Maps"></iframe>
+          <div style="margin-top:18px;text-align:center">
+            <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=DHA+Phase+6+Karachi" target="_blank" rel="noopener">Open in Google Maps →</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="serif" style="font-size:22px">Campus &amp; office</h3>
+          <ul class="contact-list">
+            <li><span>📍</span><span><b>Address:</b> Plot 12, Market Street, DHA Phase 6, Karachi</span></li>
+            <li><span>🕐</span><span><b>Office hours:</b> Mon – Sat, 10 AM – 7 PM</span></li>
+            <li><span>💬</span><span><b>WhatsApp:</b> <b>0318 2842251</b> (admission queries)</span></li>
+            <li><span>📧</span><span><b>Email:</b> admissions@brightminds.example</span></li>
+          </ul>
+          <p style="font-size:13px;color:var(--muted);margin-top:16px">Found this campus on Google — booking text says what you need. Demo class slots fill fast, especially for O-Level batches.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap split">
+      <div>
+        <span class="sec-label">Say salaam</span>
+        <h2 class="sec-title">Ask us anything.</h2>
+        <p class="sec-sub">Admissions, fees, timings — fill the form and our counselor replies within working hours (or try the AI assistant, it's always awake).</p>
+        <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="https://wa.me/923182842251?text=Salaam+Bright+Minds!+I+have+a+question." target="_blank" rel="noopener" class="btn">WhatsApp · 0318 2842251</a>
+          <a href="courses.html" class="btn ghost">Course fees →</a>
+        </div>
+      </div>
+      <div class="form-card">
+        <h2 class="serif">Send your query</h2>
+        <div class="okbox" id="okbox">✓ Message sent! We'll reply within working hours.</div>
+        <form id="leadForm">
+          <div class="field"><label>Your name</label><input required name="name" placeholder="e.g. Fatima Noor" /></div>
+          <div class="field"><label>Your phone / WhatsApp</label><input required name="phone" placeholder="03xx xxxxxxx" /></div>
+          <div class="field"><label>Your message</label><textarea required name="message" rows="4" placeholder="e.g. A-Level admission for my daughter — October intake?"></textarea></div>
+          <button type="submit" class="btn" style="width:100%;justify-content:center">Send Message →</button>
+          <p class="hint">Stored in the academy inbox + opens WhatsApp with a copy of your message.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div>© 2026 <b>Bright Minds Academy</b> · DHA Phase 6, Karachi</div>
+      <div style="margin-top:6px">Sample business website by <a href="https://brandrise.online" target="_blank" rel="noopener">@brandrise.online</a> · 1 month maintenance included</div>
+    </div>
+  </footer>
+
+  <div class="wa-fab" id="waFab">💬</div>
+  <div class="chat" id="chat">
+    <div class="chat-head"><span></span>Bright Minds · AI Assistant</div>
+    <div class="chat-body" id="chatBody">
+      <div class="msg bot">Salaam! 👋 Ask me about courses, fees, timings or admissions — I reply 24/7.</div>
+    </div>
+    <div class="chat-input"><input id="chatIn" placeholder="Ask me anything…" /><button id="chatSend">➤</button></div>
+  </div>
+
+  <script>
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    burger.addEventListener('click', () => nav.classList.toggle('open'));
+    document.getElementById('leadForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const f = new FormData(e.target);
+      const data = { name: f.get('name'), phone: f.get('phone'), message: f.get('message') };
+      const business = 'Bright Minds Academy (demo)';
+      try {
+        await fetch('https://brandrise.onrender.com/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...data, business }) });
+      } catch (_) {}
+      window.open(`https://wa.me/923182842251?text=${encodeURIComponent(`Salaam Bright Minds! ${f.get('message')} — ${f.get('name')} (${f.get('phone')})`)}`, '_blank');
+      document.getElementById('okbox').style.display = 'block';
+      e.target.style.display = 'none';
+    });
+    const fab = document.getElementById('waFab');
+    const chat = document.getElementById('chat');
+    fab.addEventListener('click', () => chat.classList.toggle('open'));
+    const chatBody = document.getElementById('chatBody');
+    const chatIn = document.getElementById('chatIn');
+    const chatSend = document.getElementById('chatSend');
+    const answers = [
+      { keys: ['fee', 'fess', 'cost', 'price', 'money', 'kitna'], reply: '💸 Current fees: O-Level Rs 18,000/month · A-Level Rs 22,000/month · Matric & professional courses Rs 12,000–16,000/month. Demo class is free!' },
+      { keys: ['time', 'timing', 'schedule', 'hour', 'kab'], reply: '🕐 Classes run Mon–Sat, 3 PM – 9 PM. Two sessions a week per subject, weekend catch-up available.' },
+      { keys: ['course', 'subject', 'program', 'o level', 'a level', 'matric', 'english', 'coding'], reply: '📚 O-Level, A-Level, Matric (Math/Computer), English Language, Coding-for-teens. Full list + fees → courses.html' },
+      { keys: ['loc', 'address', 'where', 'map', 'kahan', 'dha', 'lean'], reply: '📍 Bright Minds Academy, DHA Phase 6, Karachi. Map and directions are right on this page above.' },
+      { keys: ['admi', 'join', 'enrol', 'demo', 'register', 'apply', 'seat'], reply: '🎓 Admissions are open! Book a free demo class using the form on this page, then a quick level test places you in the right batch.' },
+      { keys: ['human', 'call', 'teacher', 'person', 'contact', 'number', 'phone', 'whats'], reply: '👩‍🏫 Counselors reply within working hours. For urgent matters, message us on WhatsApp: 0318 2842251.' },
+      { keys: ['salam', 'hello', 'hi', 'hey', 'salaam'], reply: 'Salaam! 😊 Ask me about courses, fees, timings, location or admissions.' }
+    ];
+    function botReply(t){ const d=document.createElement('div'); d.className='msg bot'; d.textContent=t; chatBody.appendChild(d); chatBody.scrollTop=chatBody.scrollHeight; }
+    function send(){
+      const v = chatIn.value.trim().toLowerCase(); if(!v) return;
+      const d = document.createElement('div'); d.className='msg user'; d.textContent=v;
+      chatBody.appendChild(d); chatBody.scrollTop=chatBody.scrollHeight; chatIn.value='';
+      setTimeout(() => { for (const a of answers) if (a.keys.some(k => v.includes(k))) { botReply(a.reply); return; } botReply("Hmm, not sure. Try \"fees\", \"timings\", \"courses\", \"location\" or \"admission\" — or message us on WhatsApp."); }, 600);
+    }
+    chatSend.addEventListener('click', send);
+    chatIn.addEventListener('keydown', (e) => { if(e.key==='Enter') send(); });
+  </script>
+</body>
+</html>
